@@ -1,55 +1,56 @@
-Text-to-Freemind
+txt2mm
 ================
 
-A simple text to freemind conversion program
+A simple text to freeplane conversion program
 
 
 Overview
 ========
 
 This program converts tab-indented UTF-8 text files into an XML format suitable
-for display by Freemind. It was written out of annoyance with the Freemind user
+for display by FreePlane. It was written out of annoyance with the FreePlane user
 interface, and the lack of 'merging' capabilities when collaborating with other
 people.
 
 Copyright  2006–2017  Wouter Bolsterlee <uws@xs4all.nl>
+Copyright  2025       Richard Holbert <rholbert@gmail.com>
 
-This program is distributed under the GPL v2 (or later) license.
+This revised program is distributed under the Apache license.
 
 
 Usage
 =====
 
-To convert a single text file into a Freemind file, use::
+To convert a single text file into a FreePlane file, use::
 
-    $ text-to-freemind input-file.txt.mm > output-file.mm
+    $ txt2mm input-file.txt > output-file.mm
 
 You can use it as a filter (using shell pipes) as well::
 
-    $ cat some-text-data.mm.txt | text-to-freemind > output-file.mm
+    $ cat some-text-data.txt | txt2mm > output-file.mm
 
 A Makefile snippet is also included to convert all ``*.mm.txt`` files into their
 ``*.mm`` counterparts. First copy or symlink the makefile, than run make::
 
-    $ cp /path/to/text-to-freemind/text-to-freemind.make Makefile
+    $ cp /path/to/txt2mm/txt2mm.make Makefile
     $ make
 
 Alternatively::
 
-  $ ln -s /path/to/text-to-freemind/text-to-freemind.make Makefile
+  $ ln -s /path/to/txt2mm/txt2mm.make Makefile
   $ make
 
 Or execute the makefile directly if you don't want to copy files around::
 
-  $ /path/to/text-to-freemind/text-to-freemind.make
+  $ /path/to/txt2mm/txt2mm.make
 
 
 Requirements
 ============
 
-The conversion program is written in Python (tested with 2.4 and 2.5) and
+The conversion program is written in Python (tested with 3.10 and 3.12) and
 requires an ElementTree implementation. Install python-elementtree or
-python-celementtree (included in Python 2.5) if you run into programs.
+python-celementtree (included in Python 3) if you run into programs.
 
 The Makefile snippet obviously depends on the make utility. GNU/Make is known
 to work.
